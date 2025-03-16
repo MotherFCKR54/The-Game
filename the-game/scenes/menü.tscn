@@ -1,21 +1,23 @@
-[gd_scene load_steps=19 format=3 uid="uid://cv1c73evbwc47"]
+[gd_scene load_steps=21 format=3 uid="uid://cv1c73evbwc47"]
 
 [ext_resource type="Texture2D" uid="uid://cvfo602r0vr2s" path="res://pictures/simahatter.png" id="1_1dlok"]
 [ext_resource type="Script" path="res://scenes/start.gd" id="2_kle00"]
 [ext_resource type="Texture2D" uid="uid://dgurrqjhl0hld" path="res://pictures/templom2.png" id="3_8o53p"]
 [ext_resource type="Texture2D" uid="uid://524l7q6m7wt4" path="res://pictures/csillag 1.png" id="3_770bb"]
-[ext_resource type="Texture2D" uid="uid://blrjms3iv575j" path="res://pictures/Beállítás.png" id="3_ja44y"]
 [ext_resource type="Texture2D" uid="uid://cpt43l7toql5v" path="res://pictures/csillag2.png" id="4_04fxg"]
-[ext_resource type="Texture2D" uid="uid://cw7ciqkht5dsw" path="res://pictures/Piros Beállítás.png" id="4_7qb8s"]
-[ext_resource type="Texture2D" uid="uid://2vupprashv4o" path="res://pictures/Piros play.png" id="4_ms3k6"]
 [ext_resource type="AudioStream" uid="uid://by2l0nx8uf6c3" path="res://zenék/loop.mp3" id="4_odhoa"]
 [ext_resource type="Texture2D" uid="uid://cnfy3pldn6v4n" path="res://pictures/templom1.png" id="4_tac0w"]
 [ext_resource type="Script" path="res://scenes/animation.gd" id="5_abmvi"]
-[ext_resource type="Texture2D" uid="uid://7dok1uvm0kb2" path="res://pictures/play.png" id="5_chqlh"]
-[ext_resource type="AudioStream" uid="uid://b2n037hcefmmy" path="res://zenék/kurzor.mp3" id="6_0e3wx"]
-[ext_resource type="Texture2D" uid="uid://cebv4ryn7lksm" path="res://pictures/credits.png" id="6_g1akk"]
-[ext_resource type="Texture2D" uid="uid://cnwygg6ft6oqq" path="res://pictures/piros credits.png" id="9_cdvk6"]
-[ext_resource type="AudioStream" uid="uid://cwq7jts4ag6qy" path="res://zenék/buttonpress.mp3" id="11_2e0sh"]
+[ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="6_0e3wx"]
+[ext_resource type="Texture2D" uid="uid://2no52y3t4yeb" path="res://pictures/ujjatek1.png" id="8_yjlmp"]
+[ext_resource type="Texture2D" uid="uid://b1mlmi3kwnaum" path="res://pictures/ujjatek2.png" id="9_jhkx4"]
+[ext_resource type="Texture2D" uid="uid://c7h580n65uish" path="res://pictures/beallitasok1.png" id="11_sucjw"]
+[ext_resource type="Texture2D" uid="uid://808ffrvkdd64" path="res://pictures/beallitasok2.png" id="12_rees5"]
+[ext_resource type="Texture2D" uid="uid://c3leoftqn3dyq" path="res://pictures/folytatas.png" id="13_0u37p"]
+[ext_resource type="Texture2D" uid="uid://c713kl6758pei" path="res://pictures/folytatas2.png" id="14_r3i6l"]
+[ext_resource type="Texture2D" uid="uid://qfjlyxjvf1t1" path="res://pictures/kilepes1.png" id="15_crdng"]
+[ext_resource type="Texture2D" uid="uid://cnd7wltq0hcvk" path="res://pictures/kilepes2.png" id="16_uy4xl"]
+[ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="18_umns8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lo5g0"]
 animations = [{
@@ -78,51 +80,65 @@ frame_progress = 0.857654
 script = ExtResource("5_abmvi")
 
 [node name="Play" type="TextureButton" parent="."]
-offset_left = 319.0
-offset_top = 398.0
-offset_right = 842.0
-offset_bottom = 618.0
-scale = Vector2(0.372, 0.4)
-texture_normal = ExtResource("5_chqlh")
-texture_pressed = ExtResource("4_ms3k6")
-texture_hover = ExtResource("4_ms3k6")
-texture_focused = ExtResource("4_ms3k6")
+offset_left = 38.0
+offset_top = 160.0
+offset_right = 1805.0
+offset_bottom = 1189.0
+scale = Vector2(0.098, 0.1)
+texture_normal = ExtResource("8_yjlmp")
+texture_pressed = ExtResource("9_jhkx4")
+texture_hover = ExtResource("9_jhkx4")
+texture_focused = ExtResource("9_jhkx4")
 script = ExtResource("2_kle00")
 
 [node name="Beállítások" type="TextureButton" parent="."]
-offset_left = 94.0
-offset_top = 400.0
-offset_right = 585.0
-offset_bottom = 634.0
-scale = Vector2(0.372, 0.372)
-texture_normal = ExtResource("3_ja44y")
-texture_pressed = ExtResource("4_7qb8s")
-texture_hover = ExtResource("4_7qb8s")
-texture_focused = ExtResource("4_7qb8s")
+offset_left = 38.0
+offset_top = 261.0
+offset_right = 1805.0
+offset_bottom = 1290.0
+scale = Vector2(0.098, 0.1)
+texture_normal = ExtResource("11_sucjw")
+texture_pressed = ExtResource("12_rees5")
+texture_hover = ExtResource("12_rees5")
+texture_focused = ExtResource("12_rees5")
 script = ExtResource("2_kle00")
 
-[node name="Credits" type="TextureButton" parent="."]
-offset_left = 557.0
-offset_top = 400.0
-offset_right = 1081.0
-offset_bottom = 616.0
-scale = Vector2(0.372, 0.372)
-texture_normal = ExtResource("6_g1akk")
-texture_pressed = ExtResource("9_cdvk6")
-texture_hover = ExtResource("9_cdvk6")
-texture_focused = ExtResource("9_cdvk6")
+[node name="Folytatás" type="TextureButton" parent="."]
+offset_left = 38.0
+offset_top = 62.0
+offset_right = 1805.0
+offset_bottom = 1091.0
+scale = Vector2(0.098, 0.1)
+texture_normal = ExtResource("13_0u37p")
+texture_pressed = ExtResource("14_r3i6l")
+texture_hover = ExtResource("14_r3i6l")
+texture_focused = ExtResource("14_r3i6l")
+script = ExtResource("2_kle00")
+
+[node name="Kilépés" type="TextureButton" parent="."]
+offset_left = 38.0
+offset_top = 367.0
+offset_right = 1805.0
+offset_bottom = 1396.0
+scale = Vector2(0.098, 0.1)
+texture_normal = ExtResource("15_crdng")
+texture_pressed = ExtResource("16_uy4xl")
+texture_hover = ExtResource("16_uy4xl")
+texture_focused = ExtResource("16_uy4xl")
 script = ExtResource("2_kle00")
 
 [node name="egerravitel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_0e3wx")
 
 [node name="kattintas" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_2e0sh")
+stream = ExtResource("18_umns8")
 
 [connection signal="ready" from="." to="Play" method="_on_menü_ready"]
 [connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
 [connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="mouse_entered" from="Beállítások" to="Play" method="_on_beállítások_mouse_entered"]
 [connection signal="pressed" from="Beállítások" to="Play" method="_on_beállítások_pressed"]
-[connection signal="mouse_entered" from="Credits" to="Play" method="_on_credits_mouse_entered"]
-[connection signal="pressed" from="Credits" to="Play" method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="Folytatás" to="Kilépés" method="_on_folytatás_mouse_entered"]
+[connection signal="pressed" from="Folytatás" to="Kilépés" method="_on_folytatás_pressed"]
+[connection signal="mouse_entered" from="Kilépés" to="Folytatás" method="_on_kilépés_mouse_entered"]
+[connection signal="pressed" from="Kilépés" to="Folytatás" method="_on_kilépés_pressed"]
