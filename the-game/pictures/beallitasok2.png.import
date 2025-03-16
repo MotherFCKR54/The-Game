@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw8oryigrssbi"
-path="res://.godot/imported/vissza1.png-31f6442ce16c82b73af689eb6aaa34da.ctex"
+uid="uid://808ffrvkdd64"
+path="res://.godot/imported/beallitasok2.png-cd92dca5eec28f0e1e292ab72aef9b30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/vissza1.png"
-dest_files=["res://.godot/imported/vissza1.png-31f6442ce16c82b73af689eb6aaa34da.ctex"]
+source_file="res://pictures/beallitasok2.png"
+dest_files=["res://.godot/imported/beallitasok2.png-cd92dca5eec28f0e1e292ab72aef9b30.ctex"]
 
 [params]
 

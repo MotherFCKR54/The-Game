@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw8oryigrssbi"
-path="res://.godot/imported/vissza1.png-31f6442ce16c82b73af689eb6aaa34da.ctex"
+uid="uid://2no52y3t4yeb"
+path="res://.godot/imported/ujjatek1.png-0d4a300bdf9dc3ddd1f4a5ff8335e56c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/vissza1.png"
-dest_files=["res://.godot/imported/vissza1.png-31f6442ce16c82b73af689eb6aaa34da.ctex"]
+source_file="res://pictures/ujjatek1.png"
+dest_files=["res://.godot/imported/ujjatek1.png-0d4a300bdf9dc3ddd1f4a5ff8335e56c.ctex"]
 
 [params]
 

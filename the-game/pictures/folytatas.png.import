@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw8oryigrssbi"
-path="res://.godot/imported/vissza1.png-31f6442ce16c82b73af689eb6aaa34da.ctex"
+uid="uid://c3leoftqn3dyq"
+path="res://.godot/imported/folytatas.png-66620193bfb63d666ec8027ec37c5571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/vissza1.png"
-dest_files=["res://.godot/imported/vissza1.png-31f6442ce16c82b73af689eb6aaa34da.ctex"]
+source_file="res://pictures/folytatas.png"
+dest_files=["res://.godot/imported/folytatas.png-66620193bfb63d666ec8027ec37c5571.ctex"]
 
 [params]
 
