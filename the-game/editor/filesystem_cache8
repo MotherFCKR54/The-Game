@@ -1,0 +1,47 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1742163568
+::res://pictures/::1742163365
+beallitasok1.png::CompressedTexture2D::7035216783679107499::1742159044::1742159114::1::::<><>::
+beallitasok2.png::CompressedTexture2D::2369854163483436383::1742159044::1742159114::1::::<><>::
+beallitasokhatter.png::CompressedTexture2D::2179121832498018402::1742159048::1742159113::1::::<><>::
+Beállítás.png::CompressedTexture2D::3194161257059820229::1742159047::1742159113::1::::<><>::
+credits.png::CompressedTexture2D::5056988895169855376::1742159048::1742159112::1::::<><>::
+csillag2.png::CompressedTexture2D::5866708622376605437::1742159049::1742159113::1::::<><>::
+csillag 1.png::CompressedTexture2D::2163185651913660059::1742159049::1742159113::1::::<><>::
+folytatas2.png::CompressedTexture2D::7074276746286429172::1742159044::1742159112::1::::<><>::
+folytatas.png::CompressedTexture2D::6761105306344979388::1742159044::1742159112::1::::<><>::
+hatter.png::CompressedTexture2D::2721600660739270551::1742159049::1742159112::1::::<><>::
+kakapo.ogv::VideoStreamTheora::-1::1742163359::0::1::::<><>::
+kilepes1.png::CompressedTexture2D::1133910780174783200::1742159044::1742159111::1::::<><>::
+kilepes2.png::CompressedTexture2D::5693472307046025828::1742159044::1742159111::1::::<><>::
+maszk1.png::CompressedTexture2D::1525602568787284845::1742159049::1742159114::1::::<><>::
+maszk2.png::CompressedTexture2D::2776993295608824578::1742159049::1742159114::1::::<><>::
+Névtelen-videó-–-A-Clipchamppel-készült.ogv::VideoStreamTheora::-1::1742159048::0::1::::<><>::
+Piros Beállítás.png::CompressedTexture2D::6383192592055867526::1742159048::1742159109::1::::<><>::
+piros credits.png::CompressedTexture2D::5732180931142603120::1742159049::1742159109::1::::<><>::
+Piros play.png::CompressedTexture2D::1939692651962314068::1742159048::1742159109::1::::<><>::
+play.png::CompressedTexture2D::2253105422991361293::1742159049::1742159109::1::::<><>::
+simahatter.png::CompressedTexture2D::6258035725665092740::1742159049::1742159111::1::::<><>::
+stablista.png::CompressedTexture2D::6474374113816901647::1742159049::1742159109::1::::<><>::
+templom1.png::CompressedTexture2D::5697126238504677283::1742159049::1742159108::1::::<><>::
+templom2.png::CompressedTexture2D::7622746069972686893::1742159049::1742159108::1::::<><>::
+tvkeret.png::CompressedTexture2D::7783038761833519489::1742161853::1742161873::1::::<><>::
+ujjatek1.png::CompressedTexture2D::1922840757250038657::1742159045::1742159109::1::::<><>::
+ujjatek2.png::CompressedTexture2D::4236792931703540284::1742159045::1742159109::1::::<><>::
+vissza1.png::CompressedTexture2D::6386002062916898258::1742159050::1742159109::1::::<><>::
+vissza2.png::CompressedTexture2D::1878315883998980558::1742159045::1742159109::1::::<><>::
+vissza.png::CompressedTexture2D::5084189965344741005::1742159049::1742159108::1::::<><>::
+::res://scenes/::1742163538
+animation.gd::GDScript::-1::1742159050::0::1::::<>AnimatedSprite2D<>::
+beallitas.gd::GDScript::-1::1742162921::0::1::::<>TextureButton<>::
+beállítások.tscn::PackedScene::4996462182537196254::1742163497::0::1::::<><>::uid://6bt2233hldeg::::res://pictures/beallitasokhatter.png<>uid://by2l0nx8uf6c3::::res://zenék/loop.mp3<>uid://cw8oryigrssbi::::res://pictures/vissza1.png<>uid://104t868s8kmg::::res://pictures/vissza2.png<>res://scenes/beallitas.gd<>uid://c83i1jqk88q4f::::res://zenék/buttonpress.mp3<>uid://1v5x41gphjy3::::res://zenék/kurzor.mp3
+credits.gd::GDScript::-1::1742159050::0::1::::<>TextureButton<>::
+credits.tscn::PackedScene::2035496837870677799::1742163538::0::1::::<><>::uid://by2l0nx8uf6c3::::res://zenék/loop.mp3<>res://pictures/Névtelen-videó-–-A-Clipchamppel-készült.ogv<>uid://cyih84co0yf00::::res://pictures/stablista.png<>uid://cw8oryigrssbi::::res://pictures/vissza1.png<>uid://104t868s8kmg::::res://pictures/vissza2.png<>res://scenes/credits.gd<>uid://c83i1jqk88q4f::::res://zenék/buttonpress.mp3<>uid://1v5x41gphjy3::::res://zenék/kurzor.mp3<>res://pictures/kakapo.ogv<>uid://di5frnb13vyq0::::res://pictures/tvkeret.png
+game.tscn::PackedScene::541968201808236515::1742159050::0::1::::<><>::
+menü.tscn::PackedScene::6300660962570295906::1742163497::0::1::::<><>::uid://cvfo602r0vr2s::::res://pictures/simahatter.png<>res://scenes/start.gd<>uid://dgurrqjhl0hld::::res://pictures/templom2.png<>uid://524l7q6m7wt4::::res://pictures/csillag 1.png<>uid://cpt43l7toql5v::::res://pictures/csillag2.png<>uid://by2l0nx8uf6c3::::res://zenék/loop.mp3<>uid://cnfy3pldn6v4n::::res://pictures/templom1.png<>res://scenes/animation.gd<>uid://1v5x41gphjy3::::res://zenék/kurzor.mp3<>uid://2no52y3t4yeb::::res://pictures/ujjatek1.png<>uid://b1mlmi3kwnaum::::res://pictures/ujjatek2.png<>uid://c7h580n65uish::::res://pictures/beallitasok1.png<>uid://808ffrvkdd64::::res://pictures/beallitasok2.png<>uid://c3leoftqn3dyq::::res://pictures/folytatas.png<>uid://c713kl6758pei::::res://pictures/folytatas2.png<>uid://qfjlyxjvf1t1::::res://pictures/kilepes1.png<>uid://cnd7wltq0hcvk::::res://pictures/kilepes2.png<>uid://c83i1jqk88q4f::::res://zenék/buttonpress.mp3
+start.gd::GDScript::-1::1742159050::0::1::::<>TextureButton<>::
+valami.tscn::PackedScene::5748522010992693704::1742163497::0::1::::<><>::
+::res://zenék/::1742159108
+buttonpress.mp3::AudioStreamMP3::7147408449065395319::1742159050::1742159108::1::::<><>::
+kurzor.mp3::AudioStreamMP3::1870126014101916760::1742159050::1742159108::1::::<><>::
+loop.mp3::AudioStreamMP3::4127404381993927332::1742159050::1742159108::1::::<><>::
