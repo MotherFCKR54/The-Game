@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgaps5gh8kke"]
+
+[ext_resource type="Texture2D" uid="uid://cw8oryigrssbi" path="res://pictures/vissza1.png" id="1_wm3fr"]
+[ext_resource type="Script" path="res://scenes/vissza.gd" id="1_xr6c4"]
+[ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="2_kdflx"]
+[ext_resource type="Texture2D" uid="uid://104t868s8kmg" path="res://pictures/vissza2.png" id="2_nul0y"]
+[ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="3_qt3go"]
+
+[node name="Hangok" type="Node2D"]
+
+[node name="vissza" type="TextureButton" parent="."]
+offset_right = 402.0
+offset_bottom = 244.0
+texture_normal = ExtResource("1_wm3fr")
+texture_pressed = ExtResource("2_nul0y")
+texture_hover = ExtResource("2_nul0y")
+texture_focused = ExtResource("2_nul0y")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_xr6c4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_kdflx")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qt3go")
+
+[connection signal="mouse_entered" from="vissza" to="vissza" method="_on_mouse_entered"]
+[connection signal="pressed" from="vissza" to="vissza" method="_on_pressed"]

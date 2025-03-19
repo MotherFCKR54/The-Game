@@ -37,3 +37,12 @@ func _on_v_issza_pressed() -> void:
 
 func _on_v_issza_mouse_entered() -> void:
 	$"../AudioStreamPlayer2".play()
+
+
+func _on_hangok_pressed() -> void:
+	$"../AudioStreamPlayer".play()
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_file("res://scenes/Hangok.tscn")
+
+func _on_hangok_mouse_entered() -> void:
+	$"../AudioStreamPlayer2".play()

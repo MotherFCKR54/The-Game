@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cyih84co0yf00" path="res://pictures/stablista.png" id="2_tumq5"]
 [ext_resource type="Texture2D" uid="uid://cw8oryigrssbi" path="res://pictures/vissza1.png" id="3_lcx1m"]
 [ext_resource type="Texture2D" uid="uid://104t868s8kmg" path="res://pictures/vissza2.png" id="5_f6hk2"]
-[ext_resource type="Script" path="res://scenes/credits.gd" id="5_gufrq"]
 [ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="6_0ihh2"]
 [ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="7_2nyb6"]
+[ext_resource type="Script" path="res://scenes/vissza.gd" id="7_8k01o"]
 [ext_resource type="VideoStream" path="res://pictures/kakapo.ogv" id="8_tjqce"]
 [ext_resource type="Texture2D" uid="uid://di5frnb13vyq0" path="res://pictures/tvkeret.png" id="9_b166e"]
 [ext_resource type="Script" path="res://scenes/tv_hatter.gd" id="9_qm605"]
@@ -109,7 +109,7 @@ texture_normal = ExtResource("3_lcx1m")
 texture_pressed = ExtResource("5_f6hk2")
 texture_hover = ExtResource("5_f6hk2")
 texture_focused = ExtResource("5_f6hk2")
-script = ExtResource("5_gufrq")
+script = ExtResource("7_8k01o")
 
 [node name="TvHatter" type="VideoStreamPlayer" parent="."]
 visible = false
