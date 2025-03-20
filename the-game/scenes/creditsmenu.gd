@@ -5,6 +5,7 @@ var played = false
 
 func _ready() -> void:
 	$VideoStreamPlayer.play()
+	$AudioStreamPlayer3.play()
 	
 func _process(delta: float) -> void:
 	if countdown > 0:
@@ -14,7 +15,6 @@ func _process(delta: float) -> void:
 		$AnimationPlayer.play("Credits roll")
 		$VideoStreamPlayer.hide()
 		$TvHatter.show()
-		$TextureButton.show()
 		played = true
 		
 		
@@ -22,3 +22,6 @@ func _process(delta: float) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Credits roll":
 		$AnimationPlayer.play("Credits roll_2")
+		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(1).timeout
+		$TextureButton.show()

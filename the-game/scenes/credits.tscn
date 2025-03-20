@@ -1,18 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://4aaln4wygpjj"]
+[gd_scene load_steps=20 format=3 uid="uid://4aaln4wygpjj"]
 
 [ext_resource type="Script" path="res://scenes/creditsmenu.gd" id="1_7xqga"]
 [ext_resource type="AudioStream" uid="uid://by2l0nx8uf6c3" path="res://zenék/loop.mp3" id="1_j3m1a"]
 [ext_resource type="VideoStream" path="res://pictures/Névtelen-videó-–-A-Clipchamppel-készült.ogv" id="1_l8ys8"]
 [ext_resource type="Texture2D" uid="uid://cyih84co0yf00" path="res://pictures/stablista.png" id="2_tumq5"]
-[ext_resource type="Texture2D" uid="uid://cw8oryigrssbi" path="res://pictures/vissza1.png" id="3_lcx1m"]
-[ext_resource type="Texture2D" uid="uid://104t868s8kmg" path="res://pictures/vissza2.png" id="5_f6hk2"]
+[ext_resource type="Texture2D" uid="uid://r1p1eyxcqdra" path="res://pictures/nyil1crop.png" id="5_xoxi4"]
 [ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="6_0ihh2"]
+[ext_resource type="Texture2D" uid="uid://dmfb1a13sjkwy" path="res://pictures/nyil2crop.png" id="6_wgjoq"]
 [ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="7_2nyb6"]
 [ext_resource type="Script" path="res://scenes/vissza.gd" id="7_8k01o"]
-[ext_resource type="VideoStream" path="res://pictures/kakapo.ogv" id="8_tjqce"]
+[ext_resource type="VideoStream" path="res://pictures/creditshatter2.ogv" id="8_ops3x"]
 [ext_resource type="Texture2D" uid="uid://di5frnb13vyq0" path="res://pictures/tvkeret.png" id="9_b166e"]
 [ext_resource type="Script" path="res://scenes/tv_hatter.gd" id="9_qm605"]
-[ext_resource type="Texture2D" uid="uid://by71c5o54jxyw" path="res://pictures/szoveg.png" id="10_p4nw5"]
+[ext_resource type="Texture2D" uid="uid://c3kr6pkwr10io" path="res://pictures/szoveg1.png" id="11_osiw5"]
+[ext_resource type="AudioStream" uid="uid://hnhw6iitdklq" path="res://zenék/hattérrel.mp3" id="14_njlo3"]
 
 [sub_resource type="Animation" id="Animation_mon1h"]
 resource_name = "Credits roll"
@@ -100,24 +101,27 @@ texture = ExtResource("2_tumq5")
 [node name="TextureButton" type="TextureButton" parent="."]
 visible = false
 z_index = 2
-offset_left = 415.0
-offset_top = -21.0
-offset_right = 2335.0
-offset_bottom = 1059.0
+offset_left = 490.0
+offset_top = 555.0
+offset_right = 1229.0
+offset_bottom = 885.0
 scale = Vector2(0.147465, 0.178796)
-texture_normal = ExtResource("3_lcx1m")
-texture_pressed = ExtResource("5_f6hk2")
-texture_hover = ExtResource("5_f6hk2")
-texture_focused = ExtResource("5_f6hk2")
+texture_normal = ExtResource("5_xoxi4")
+texture_pressed = ExtResource("6_wgjoq")
+texture_hover = ExtResource("6_wgjoq")
+texture_focused = ExtResource("6_wgjoq")
+stretch_mode = 0
 script = ExtResource("7_8k01o")
 
 [node name="TvHatter" type="VideoStreamPlayer" parent="."]
 visible = false
-offset_right = 1280.0
-offset_bottom = 720.0
-scale = Vector2(0.9, 0.9)
+offset_left = 40.0
+offset_top = 20.0
+offset_right = 1960.0
+offset_bottom = 1108.0
+scale = Vector2(0.57, 0.57)
 mouse_filter = 2
-stream = ExtResource("8_tjqce")
+stream = ExtResource("8_ops3x")
 loop = true
 script = ExtResource("9_qm605")
 
@@ -130,7 +134,7 @@ texture = ExtResource("9_b166e")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 974.5)
 scale = Vector2(0.6, 0.60463)
-texture = ExtResource("10_p4nw5")
+texture = ExtResource("11_osiw5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_0ihh2")
@@ -138,11 +142,15 @@ stream = ExtResource("6_0ihh2")
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2nyb6")
 
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_njlo3")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0youk")
 }
 
 [connection signal="mouse_entered" from="TextureButton" to="TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton" method="_on_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

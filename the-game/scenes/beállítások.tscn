@@ -85,8 +85,8 @@ stream = ExtResource("6_caugx")
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2jqnw")
 
-[connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_hangok_mouse_entered"]
 [connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_hangok_mouse_entered"]
 [connection signal="pressed" from="Hangok" to="Hangok" method="_on_pressed"]
 [connection signal="pressed" from="Hangok" to="Hangok" method="_on_hangok_pressed"]
 [connection signal="mouse_entered" from="Nyelv" to="Hangok" method="_on_nyelv_mouse_entered"]

@@ -7,3 +7,11 @@ func _on_pressed() -> void:
 
 func _on_mouse_entered() -> void:
 	$"../AudioStreamPlayer2".play()
+	scale *= 1.1
+	position.x -= 5
+	position.y -= 4
+
+func _on_mouse_exited() -> void:
+	scale /= 1.1
+	position.x += 5
+	position.y += 4
