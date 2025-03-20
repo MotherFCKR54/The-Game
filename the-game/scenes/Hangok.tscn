@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgaps5gh8kke"]
+[gd_scene load_steps=9 format=3 uid="uid://bgaps5gh8kke"]
 
+[ext_resource type="Script" path="res://scenes/hangok.gd" id="1_q5ig0"]
 [ext_resource type="Texture2D" uid="uid://cw8oryigrssbi" path="res://pictures/vissza1.png" id="1_wm3fr"]
 [ext_resource type="Script" path="res://scenes/vissza.gd" id="1_xr6c4"]
 [ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="2_kdflx"]
 [ext_resource type="Texture2D" uid="uid://104t868s8kmg" path="res://pictures/vissza2.png" id="2_nul0y"]
 [ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="3_qt3go"]
+[ext_resource type="Script" path="res://scenes/audio_beállítások.gd" id="7_ogfy8"]
+[ext_resource type="Script" path="res://scenes/mentés.gd" id="8_rapbm"]
 
 [node name="Hangok" type="Node2D"]
+script = ExtResource("1_q5ig0")
 
 [node name="vissza" type="TextureButton" parent="."]
 offset_right = 402.0
@@ -25,5 +29,67 @@ stream = ExtResource("2_kdflx")
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qt3go")
 
+[node name="AudioBeállítások" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_ogfy8")
+
+[node name="Mentés" type="Button" parent="AudioBeállítások"]
+layout_mode = 2
+offset_left = 142.0
+offset_top = 609.0
+offset_right = 968.0
+offset_bottom = 640.0
+text = "Mentés"
+script = ExtResource("8_rapbm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AudioBeállítások"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 180.0
+offset_right = 968.0
+offset_bottom = 598.0
+
+[node name="Főhangerő" type="Label" parent="AudioBeállítások/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Főhangerő"
+
+[node name="FőhangerőSlider" type="HSlider" parent="AudioBeállítások/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 1.0
+step = 0.05
+
+[node name="SFX" type="Label" parent="AudioBeállítások/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Hangeffektek"
+
+[node name="SFXSlider" type="HSlider" parent="AudioBeállítások/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 1.0
+step = 0.05
+
+[node name="Zene" type="Label" parent="AudioBeállítások/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Zene"
+
+[node name="ZeneSlider" type="HSlider" parent="AudioBeállítások/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+max_value = 1.0
+step = 0.05
+
 [connection signal="mouse_entered" from="vissza" to="vissza" method="_on_mouse_entered"]
 [connection signal="pressed" from="vissza" to="vissza" method="_on_pressed"]
+[connection signal="mouse_entered" from="AudioBeállítások/Mentés" to="AudioBeállítások/Mentés" method="_on_mouse_entered"]
+[connection signal="pressed" from="AudioBeállítások/Mentés" to="." method="_on_mentés_pressed"]
+[connection signal="pressed" from="AudioBeállítások/Mentés" to="AudioBeállítások/Mentés" method="_on_pressed"]
+[connection signal="mouse_exited" from="AudioBeállítások/VBoxContainer/FőhangerőSlider" to="AudioBeállítások" method="_on_főhangerő_slider_mouse_exited"]
+[connection signal="mouse_exited" from="AudioBeállítások/VBoxContainer/SFXSlider" to="AudioBeállítások" method="_on_sfx_slider_mouse_exited"]
+[connection signal="mouse_exited" from="AudioBeállítások/VBoxContainer/ZeneSlider" to="AudioBeállítások" method="_on_zene_slider_mouse_exited"]
