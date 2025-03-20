@@ -5,6 +5,7 @@ var played = false
 
 func _ready() -> void:
 	$VideoStreamPlayer.play()
+	$"háttérzene".stop()
 	$AudioStreamPlayer3.play()
 	
 func _process(delta: float) -> void:
