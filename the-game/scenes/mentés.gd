@@ -1,8 +1,8 @@
 extends Button
 
 func _on_pressed() -> void:
-	$AudioStreamPlayer.play()
+	$"../../AudioStreamPlayer".play()
 	
 func _on_mouse_entered() -> void:
 	
-	$AudioStreamPlayer2.play()
+	$"../../AudioStreamPlayer2".play()

@@ -61,6 +61,7 @@ texture = ExtResource("1_1dlok")
 
 [node name="háttérzene" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_odhoa")
+bus = &"Music"
 parameters/looping = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]

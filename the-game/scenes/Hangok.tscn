@@ -23,11 +23,13 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("1_xr6c4")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_kdflx")
+bus = &"SFX"
 
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qt3go")
+bus = &"SFX"
 
 [node name="AudioBeállítások" type="Control" parent="."]
 layout_mode = 3
