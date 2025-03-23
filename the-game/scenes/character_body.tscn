@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm7fwtfixehce"]
+
+[ext_resource type="Script" path="res://scenes/player_controller.gd" id="1_i11my"]
+[ext_resource type="Texture2D" uid="uid://b0ocarc4uxdvh" path="res://pictures/karakter.png" id="1_ihjd4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drpoi"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_i11my")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3, -2)
+zoom = Vector2(2, 2)
+
+[node name="AgentAnimator" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AgentAnimator"]
+root_node = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="AgentAnimator"]
+position = Vector2(0, -22)
+scale = Vector2(0.0563265, 0.0278008)
+texture = ExtResource("1_ihjd4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -20)
+scale = Vector2(1, 1.34626)
+shape = SubResource("CapsuleShape2D_drpoi")
