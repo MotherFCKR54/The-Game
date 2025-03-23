@@ -25,11 +25,9 @@ script = ExtResource("1_xr6c4")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_kdflx")
-bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_qt3go")
-bus = &"SFX"
 
 [node name="AudioBeállítások" type="Control" parent="."]
 layout_mode = 3
