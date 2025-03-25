@@ -21,6 +21,7 @@ position = Vector2(576, 324)
 scale = Vector2(1.82567, 1.296)
 stream = ExtResource("1_gj2jl")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="Beallitasokhatter" type="Sprite2D" parent="."]
@@ -81,9 +82,11 @@ script = ExtResource("5_sor5i")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_caugx")
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2jqnw")
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_hangok_mouse_entered"]
@@ -94,4 +97,5 @@ stream = ExtResource("7_2jqnw")
 [connection signal="mouse_entered" from="Stáblista" to="Hangok" method="_on_stáblista_mouse_entered"]
 [connection signal="pressed" from="Stáblista" to="Hangok" method="_on_stáblista_pressed"]
 [connection signal="mouse_entered" from="VIssza" to="Hangok" method="_on_v_issza_mouse_entered"]
+[connection signal="mouse_exited" from="VIssza" to="VIssza" method="_on_mouse_exited"]
 [connection signal="pressed" from="VIssza" to="Hangok" method="_on_v_issza_pressed"]

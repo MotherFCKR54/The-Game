@@ -61,6 +61,7 @@ texture = ExtResource("1_1dlok")
 
 [node name="háttérzene" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_odhoa")
+bus = &"Music"
 parameters/looping = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
@@ -128,9 +129,11 @@ script = ExtResource("2_kle00")
 
 [node name="egerravitel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_0e3wx")
+bus = &"SFX"
 
 [node name="kattintas" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("18_umns8")
+bus = &"SFX"
 
 [connection signal="ready" from="." to="Play" method="_on_menü_ready"]
 [connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]

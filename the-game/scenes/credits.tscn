@@ -82,6 +82,7 @@ position = Vector2(483, 476)
 scale = Vector2(0.147465, 0.178796)
 stream = ExtResource("1_j3m1a")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
@@ -138,12 +139,15 @@ texture = ExtResource("11_osiw5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_0ihh2")
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_2nyb6")
+bus = &"SFX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_njlo3")
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
