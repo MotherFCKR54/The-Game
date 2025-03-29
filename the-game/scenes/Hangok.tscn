@@ -94,11 +94,6 @@ position = Vector2(975, 191.27)
 scale = Vector2(0.459667, 0.29982)
 texture = ExtResource("14_1wale")
 
-[node name="Keret5" type="Sprite2D" parent="AudioBeállítások/VBoxContainer"]
-position = Vector2(977.5, 626.27)
-scale = Vector2(0.459667, 0.29982)
-texture = ExtResource("14_1wale")
-
 [node name="FőhangerőSlider" type="HSlider" parent="AudioBeállítások/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("11_75s3t")
@@ -110,13 +105,10 @@ position = Vector2(-162.5, 325)
 scale = Vector2(0.42094, 0.42094)
 texture = ExtResource("15_612go")
 
-[node name="Keret4" type="Sprite2D" parent="AudioBeállítások/VBoxContainer"]
+[node name="Keret2" type="Sprite2D" parent="AudioBeállítások/VBoxContainer"]
 position = Vector2(977.5, 408.77)
 scale = Vector2(0.459667, 0.29982)
 texture = ExtResource("14_1wale")
-
-[node name="Keret2" type="Sprite2D" parent="AudioBeállítások/VBoxContainer"]
-scale = Vector2(1, 1)
 
 [node name="SFXSlider" type="HSlider" parent="AudioBeállítások/VBoxContainer"]
 layout_mode = 2
@@ -131,7 +123,9 @@ scale = Vector2(2.01744, 2.01744)
 texture = ExtResource("10_vgqil")
 
 [node name="Keret3" type="Sprite2D" parent="AudioBeállítások/VBoxContainer"]
-scale = Vector2(1, 1)
+position = Vector2(977.5, 626.269)
+scale = Vector2(0.459667, 0.29982)
+texture = ExtResource("14_1wale")
 
 [node name="ZeneSlider" type="HSlider" parent="AudioBeállítások/VBoxContainer"]
 layout_mode = 2
