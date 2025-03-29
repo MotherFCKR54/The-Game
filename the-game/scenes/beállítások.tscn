@@ -71,13 +71,15 @@ script = ExtResource("5_sor5i")
 [node name="VIssza" type="TextureButton" parent="."]
 offset_left = -36.0
 offset_top = -22.0
-offset_right = 1884.0
+offset_right = 1657.0
 offset_bottom = 1058.0
 scale = Vector2(0.154127, 0.141558)
 texture_normal = ExtResource("4_0ouk1")
 texture_pressed = ExtResource("5_5eqrc")
 texture_hover = ExtResource("5_5eqrc")
 texture_focused = ExtResource("5_5eqrc")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("5_sor5i")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -88,10 +90,10 @@ bus = &"SFX"
 stream = ExtResource("7_2jqnw")
 bus = &"SFX"
 
-[connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_hangok_mouse_entered"]
-[connection signal="pressed" from="Hangok" to="Hangok" method="_on_pressed"]
+[connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_mouse_entered"]
 [connection signal="pressed" from="Hangok" to="Hangok" method="_on_hangok_pressed"]
+[connection signal="pressed" from="Hangok" to="Hangok" method="_on_pressed"]
 [connection signal="mouse_entered" from="Nyelv" to="Hangok" method="_on_nyelv_mouse_entered"]
 [connection signal="pressed" from="Nyelv" to="Hangok" method="_on_nyelv_pressed"]
 [connection signal="mouse_entered" from="Stáblista" to="Hangok" method="_on_stáblista_mouse_entered"]

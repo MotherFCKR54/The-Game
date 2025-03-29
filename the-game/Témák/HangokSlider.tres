@@ -1,0 +1,42 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://dhyqepphbt3db"]
+
+[ext_resource type="Texture2D" uid="uid://ciakdj4jftmjb" path="res://pictures/gombcrop.png" id="1_6mmtl"]
+[ext_resource type="Texture2D" uid="uid://bosevijwj08cx" path="res://pictures/csikamikocka.png" id="2_xc0fc"]
+[ext_resource type="Texture2D" uid="uid://b3h185ff7oyf" path="res://pictures/atlathato.png" id="3_ua8d7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7megm"]
+atlas = ExtResource("2_xc0fc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lg34a"]
+texture = SubResource("AtlasTexture_7megm")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6rye"]
+atlas = ExtResource("2_xc0fc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fudg5"]
+texture = SubResource("AtlasTexture_r6rye")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ka4"]
+atlas = ExtResource("3_ua8d7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_42w4j"]
+texture = SubResource("AtlasTexture_66ka4")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[resource]
+HSlider/icons/grabber = ExtResource("1_6mmtl")
+HSlider/icons/grabber_highlight = ExtResource("1_6mmtl")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_lg34a")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_fudg5")
+HSlider/styles/slider = SubResource("StyleBoxTexture_42w4j")
