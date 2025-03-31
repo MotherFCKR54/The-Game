@@ -92,8 +92,8 @@ bus = &"SFX"
 
 [connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_hangok_mouse_entered"]
 [connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_mouse_entered"]
-[connection signal="pressed" from="Hangok" to="Hangok" method="_on_hangok_pressed"]
 [connection signal="pressed" from="Hangok" to="Hangok" method="_on_pressed"]
+[connection signal="pressed" from="Hangok" to="Hangok" method="_on_hangok_pressed"]
 [connection signal="mouse_entered" from="Nyelv" to="Hangok" method="_on_nyelv_mouse_entered"]
 [connection signal="pressed" from="Nyelv" to="Hangok" method="_on_nyelv_pressed"]
 [connection signal="mouse_entered" from="Stáblista" to="Hangok" method="_on_stáblista_mouse_entered"]
