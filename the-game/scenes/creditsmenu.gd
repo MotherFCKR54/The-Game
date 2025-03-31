@@ -5,8 +5,8 @@ var played = false
 
 func _ready() -> void:
 	$VideoStreamPlayer.play()
+	$feherzaj.play()
 	$"háttérzene".stop()
-	$AudioStreamPlayer3.play()
 	
 func _process(delta: float) -> void:
 	if countdown > 0:
@@ -16,6 +16,8 @@ func _process(delta: float) -> void:
 		$AnimationPlayer.play("Credits roll")
 		$VideoStreamPlayer.hide()
 		$TvHatter.show()
+		$AudioStreamPlayer3.play()
+		$feherzaj.stop()
 		played = true
 		
 		

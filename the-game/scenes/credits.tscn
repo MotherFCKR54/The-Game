@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://4aaln4wygpjj"]
+[gd_scene load_steps=21 format=3 uid="uid://4aaln4wygpjj"]
 
 [ext_resource type="Script" path="res://scenes/creditsmenu.gd" id="1_7xqga"]
 [ext_resource type="AudioStream" uid="uid://by2l0nx8uf6c3" path="res://zenék/loop.mp3" id="1_j3m1a"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://scenes/tv_hatter.gd" id="9_qm605"]
 [ext_resource type="Texture2D" uid="uid://c3kr6pkwr10io" path="res://pictures/szoveg1.png" id="11_osiw5"]
 [ext_resource type="AudioStream" uid="uid://hnhw6iitdklq" path="res://zenék/hattérrel.mp3" id="14_njlo3"]
+[ext_resource type="AudioStream" uid="uid://cc60cjyncqhkb" path="res://zenék/stablistahang.mp3" id="15_y6tyv"]
 
 [sub_resource type="Animation" id="Animation_mon1h"]
 resource_name = "Credits roll"
@@ -148,6 +149,9 @@ bus = &"SFX"
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_njlo3")
 bus = &"SFX"
+
+[node name="feherzaj" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_y6tyv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
