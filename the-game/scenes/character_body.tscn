@@ -1,9 +1,47 @@
-[gd_scene load_steps=4 format=3 uid="uid://dm7fwtfixehce"]
+[gd_scene load_steps=10 format=3 uid="uid://dm7fwtfixehce"]
 
 [ext_resource type="Script" path="res://scenes/player_controller.gd" id="1_i11my"]
-[ext_resource type="Texture2D" uid="uid://b0ocarc4uxdvh" path="res://pictures/karakter.png" id="1_ihjd4"]
+[ext_resource type="Texture2D" uid="uid://cg66uh1xuhbcs" path="res://pictures/karaktermozgas 1.png" id="2_mjjwi"]
+[ext_resource type="Texture2D" uid="uid://qodnmkt6nied" path="res://pictures/karakter all.png" id="2_phr0m"]
+[ext_resource type="Texture2D" uid="uid://bsnu8i18u0dmm" path="res://pictures/karaktermozgas 2.png" id="3_1ayv3"]
+[ext_resource type="Texture2D" uid="uid://fg50tgsva8b2" path="res://pictures/karaktermozgas 3.png" id="4_50vcb"]
+[ext_resource type="Texture2D" uid="uid://o27u0twt3bcr" path="res://pictures/karaktermozgas 4.png" id="5_0lwv4"]
+[ext_resource type="Texture2D" uid="uid://by8dckwc1tn18" path="res://pictures/karaktermozgas 5.png" id="6_3yj77"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ewy4g"]
+animations = [{
+"frames": [{
+"duration": 0.51,
+"texture": ExtResource("3_1ayv3")
+}, {
+"duration": 0.51,
+"texture": ExtResource("2_mjjwi")
+}, {
+"duration": 0.51,
+"texture": ExtResource("4_50vcb")
+}, {
+"duration": 0.91,
+"texture": ExtResource("5_0lwv4")
+}, {
+"duration": 0.91,
+"texture": ExtResource("6_3yj77")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_phr0m")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drpoi"]
+radius = 6.32032
+height = 20.1466
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(1.25374, 1.9908)
@@ -15,15 +53,12 @@ zoom = Vector2(2, 2)
 
 [node name="AgentAnimator" type="Node2D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AgentAnimator"]
-root_node = NodePath("../..")
-
-[node name="Sprite2D" type="Sprite2D" parent="AgentAnimator"]
-position = Vector2(0, -22)
-scale = Vector2(0.0563265, 0.0278008)
-texture = ExtResource("1_ihjd4")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AgentAnimator"]
+position = Vector2(-0.797614, -21.5994)
+scale = Vector2(0.0452884, 0.0278763)
+sprite_frames = SubResource("SpriteFrames_ewy4g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -20)
-scale = Vector2(1.16836, 1.3846)
+position = Vector2(0, -18.5855)
+scale = Vector2(2.27157, 1.94476)
 shape = SubResource("CapsuleShape2D_drpoi")

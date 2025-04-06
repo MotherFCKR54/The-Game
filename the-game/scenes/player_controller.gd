@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
+@onready var animated_sprite = $AgentAnimator/AnimatedSprite2D
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,7 +21,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Move_left", "Move_right")
 	if direction:
 		velocity.x = direction * SPEED
+		animated_sprite.play("default")
+		animated_sprite.flip_h = direction < 0
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		animated_sprite.stop()
 	move_and_slide()
