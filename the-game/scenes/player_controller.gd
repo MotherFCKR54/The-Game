@@ -26,4 +26,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animated_sprite.stop()
+		animated_sprite.play("idle")
 	move_and_slide()
