@@ -5,7 +5,7 @@ func _ready() -> void:
 func _on_pressed() -> void:
 	$"../kattintas".play()
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/fejezetek.tscn")
 func _on_beállítások_pressed() -> void:
 	$"../kattintas".play()
 	await get_tree().create_timer(1).timeout
@@ -20,7 +20,7 @@ func _on_mouse_entered() -> void:
 func _on_folytatás_pressed() -> void:
 	$"../kattintas".play()
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://scenes/fejezetek.tscn")
 	
 
 func _on_kilépés_pressed() -> void:

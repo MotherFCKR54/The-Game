@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://m0fsre22mvrm"]
+
+[ext_resource type="VideoStream" path="res://pictures/kakapo.ogv" id="1_ffngf"]
+[ext_resource type="Texture2D" uid="uid://bn65da6q8147o" path="res://pictures/fejezetek.png" id="2_071lo"]
+[ext_resource type="Texture2D" uid="uid://m54f7cwnsfd3" path="res://pictures/kitoltocrop.png" id="3_p5i42"]
+[ext_resource type="Script" path="res://scenes/fejezetekcsik.gd" id="4_aoeg4"]
+[ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="5_5khg8"]
+[ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="6_vdy3c"]
+[ext_resource type="AudioStream" uid="uid://by2l0nx8uf6c3" path="res://zenék/loop.mp3" id="7_2gnsb"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+scale = Vector2(0.9, 0.9)
+stream = ExtResource("1_ffngf")
+autoplay = true
+loop = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.4)
+z_index = 1
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_071lo")
+
+[node name="Fejezetekcsik" type="TextureButton" parent="."]
+offset_left = 135.0
+offset_top = 229.0
+offset_right = 676.0
+offset_bottom = 344.0
+texture_normal = ExtResource("3_p5i42")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_aoeg4")
+
+[node name="Egérrávitel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5khg8")
+bus = &"SFX"
+
+[node name="buttonpress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_vdy3c")
+bus = &"SFX"
+
+[node name="háttérzene" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_2gnsb")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[connection signal="mouse_entered" from="Fejezetekcsik" to="Fejezetekcsik" method="_on_mouse_entered"]
+[connection signal="pressed" from="Fejezetekcsik" to="Fejezetekcsik" method="_on_pressed"]
