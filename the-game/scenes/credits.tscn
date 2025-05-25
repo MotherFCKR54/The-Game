@@ -1,22 +1,22 @@
 [gd_scene load_steps=25 format=3 uid="uid://4aaln4wygpjj"]
 
-[ext_resource type="Script" path="res://scenes/creditsmenu.gd" id="1_7xqga"]
+[ext_resource type="Script" uid="uid://cbydg1o34m54g" path="res://scenes/creditsmenu.gd" id="1_7xqga"]
 [ext_resource type="AudioStream" uid="uid://by2l0nx8uf6c3" path="res://zenék/loop.mp3" id="1_j3m1a"]
-[ext_resource type="VideoStream" path="res://pictures/Névtelen-videó-–-A-Clipchamppel-készült.ogv" id="1_l8ys8"]
+[ext_resource type="VideoStream" uid="uid://uyyjr8x0fqc3" path="res://pictures/Névtelen-videó-–-A-Clipchamppel-készült.ogv" id="1_l8ys8"]
 [ext_resource type="Texture2D" uid="uid://cyih84co0yf00" path="res://pictures/stablista.png" id="2_tumq5"]
 [ext_resource type="Texture2D" uid="uid://r1p1eyxcqdra" path="res://pictures/nyil1crop.png" id="5_xoxi4"]
 [ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="6_0ihh2"]
 [ext_resource type="Texture2D" uid="uid://dmfb1a13sjkwy" path="res://pictures/nyil2crop.png" id="6_wgjoq"]
 [ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="7_2nyb6"]
-[ext_resource type="Script" path="res://scenes/vissza.gd" id="7_8k01o"]
-[ext_resource type="VideoStream" path="res://pictures/creditshatter2.ogv" id="8_ops3x"]
+[ext_resource type="Script" uid="uid://gcyd8cv73xyq" path="res://scenes/vissza.gd" id="7_8k01o"]
+[ext_resource type="VideoStream" uid="uid://bnbygwdymctcg" path="res://pictures/creditshatter2.ogv" id="8_ops3x"]
 [ext_resource type="Texture2D" uid="uid://di5frnb13vyq0" path="res://pictures/tvkeret.png" id="9_b166e"]
-[ext_resource type="Script" path="res://scenes/tv_hatter.gd" id="9_qm605"]
+[ext_resource type="Script" uid="uid://5380tumydaql" path="res://scenes/tv_hatter.gd" id="9_qm605"]
 [ext_resource type="Texture2D" uid="uid://c3kr6pkwr10io" path="res://pictures/szoveg1.png" id="11_osiw5"]
 [ext_resource type="AudioStream" uid="uid://hnhw6iitdklq" path="res://zenék/hattérrel.mp3" id="14_njlo3"]
 [ext_resource type="AudioStream" uid="uid://cc60cjyncqhkb" path="res://zenék/stablistahang.mp3" id="15_y6tyv"]
-[ext_resource type="Script" path="res://scenes/tekerogomb_1.gd" id="16_0r3wf"]
-[ext_resource type="Script" path="res://scenes/tekerogomb_2.gd" id="17_h2qmb"]
+[ext_resource type="Script" uid="uid://dym4fn1ugns0r" path="res://scenes/tekerogomb_1.gd" id="16_0r3wf"]
+[ext_resource type="Script" uid="uid://bdbomdjmilx3n" path="res://scenes/tekerogomb_2.gd" id="17_h2qmb"]
 [ext_resource type="Texture2D" uid="uid://tjahyc7s8hl8" path="res://pictures/futty2.png" id="17_wy35m"]
 [ext_resource type="Texture2D" uid="uid://ctjuv5w0jdcit" path="res://pictures/futty1.png" id="18_cqe26"]
 
@@ -73,10 +73,10 @@ resource_name = "White noise"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0youk"]
 _data = {
-"Credits roll": SubResource("Animation_mon1h"),
-"Credits roll_2": SubResource("Animation_xssuv"),
-"RESET": SubResource("Animation_5uxlu"),
-"White noise": SubResource("Animation_bgqxj")
+&"Credits roll": SubResource("Animation_mon1h"),
+&"Credits roll_2": SubResource("Animation_xssuv"),
+&"RESET": SubResource("Animation_5uxlu"),
+&"White noise": SubResource("Animation_bgqxj")
 }
 
 [node name="Credits" type="Node2D"]

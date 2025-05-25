@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cw8oryigrssbi" path="res://pictures/vissza1.png" id="4_0ouk1"]
 [ext_resource type="Texture2D" uid="uid://ckj0ppo7xo8r5" path="res://pictures/hangcrop2.png" id="4_5pc26"]
 [ext_resource type="Texture2D" uid="uid://104t868s8kmg" path="res://pictures/vissza2.png" id="5_5eqrc"]
-[ext_resource type="Script" path="res://scenes/beallitas.gd" id="5_sor5i"]
+[ext_resource type="Script" uid="uid://djg6vgmcqyg7x" path="res://scenes/beallitas.gd" id="5_sor5i"]
 [ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="6_caugx"]
 [ext_resource type="Texture2D" uid="uid://qxqwncdlf1bc" path="res://pictures/nyelvcrop1.png" id="6_mjvib"]
 [ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="7_2jqnw"]

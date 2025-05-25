@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://ck5lhixlgks2s"]
+
+[ext_resource type="Script" uid="uid://bp2dig72b2g5i" path="res://pause.gd" id="1_r8yp4"]
+[ext_resource type="Texture2D" uid="uid://dnxgjxrevb1ko" path="res://pictures/Pause.png" id="2_m0klm"]
+[ext_resource type="Texture2D" uid="uid://cgbn7m24j6o7n" path="res://pictures/pause1.png" id="3_xmhi0"]
+[ext_resource type="Texture2D" uid="uid://5ohd8a47um7j" path="res://pictures/pause1.1.png" id="4_xw83q"]
+[ext_resource type="Texture2D" uid="uid://dsh103lpyb71a" path="res://pictures/pause2.png" id="5_0akjr"]
+[ext_resource type="Texture2D" uid="uid://dvl1kqugv356y" path="res://pictures/pause2.2.png" id="6_capb0"]
+[ext_resource type="Texture2D" uid="uid://cjocaobk43ibp" path="res://pictures/pause3.png" id="7_gcmcy"]
+[ext_resource type="Texture2D" uid="uid://cup16fhmmx2a3" path="res://pictures/pause3.3.png" id="8_jl8xs"]
+[ext_resource type="Texture2D" uid="uid://dnp45o16ilkpd" path="res://pictures/pause4.png" id="9_qn06s"]
+[ext_resource type="Texture2D" uid="uid://cskjqkddmv0xf" path="res://pictures/pause4.4.png" id="10_vrtv1"]
+[ext_resource type="AudioStream" uid="uid://1v5x41gphjy3" path="res://zenék/kurzor.mp3" id="11_0akjr"]
+[ext_resource type="AudioStream" uid="uid://c83i1jqk88q4f" path="res://zenék/buttonpress.mp3" id="12_capb0"]
+
+[node name="Pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r8yp4")
+
+[node name="Pause" type="Sprite2D" parent="."]
+position = Vector2(563, 313)
+scale = Vector2(0.430605, 0.585987)
+texture = ExtResource("2_m0klm")
+
+[node name="beallitas" type="TextureButton" parent="."]
+offset_left = 451.0
+offset_top = 125.0
+offset_right = 1151.0
+offset_bottom = 315.0
+scale = Vector2(0.261886, 0.32018)
+texture_normal = ExtResource("3_xmhi0")
+texture_pressed = ExtResource("4_xw83q")
+texture_hover = ExtResource("4_xw83q")
+
+[node name="folytatas" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 207.0
+offset_right = 1152.0
+offset_bottom = 397.0
+scale = Vector2(0.261886, 0.32018)
+texture_normal = ExtResource("5_0akjr")
+texture_pressed = ExtResource("6_capb0")
+texture_hover = ExtResource("6_capb0")
+
+[node name="iranyitas" type="TextureButton" parent="."]
+offset_left = 452.0
+offset_top = 295.0
+offset_right = 1152.0
+offset_bottom = 485.0
+scale = Vector2(0.261886, 0.32018)
+texture_normal = ExtResource("7_gcmcy")
+texture_pressed = ExtResource("8_jl8xs")
+texture_hover = ExtResource("8_jl8xs")
+
+[node name="kilepes" type="TextureButton" parent="."]
+offset_left = 452.0
+offset_top = 385.0
+offset_right = 1152.0
+offset_bottom = 575.0
+scale = Vector2(0.261886, 0.32018)
+texture_normal = ExtResource("9_qn06s")
+texture_pressed = ExtResource("10_vrtv1")
+texture_hover = ExtResource("10_vrtv1")
+
+[node name="Egérrávitel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_0akjr")
+bus = &"SFX"
+
+[node name="buttonpress" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_capb0")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="beallitas" to="." method="_on_beallitas_mouse_entered"]
+[connection signal="pressed" from="beallitas" to="." method="_on_beallitas_pressed"]
+[connection signal="mouse_entered" from="folytatas" to="." method="_on_folytatas_mouse_entered"]
+[connection signal="pressed" from="folytatas" to="." method="_on_folytatas_pressed"]
+[connection signal="mouse_entered" from="iranyitas" to="." method="_on_iranyitas_mouse_entered"]
+[connection signal="mouse_entered" from="kilepes" to="." method="_on_kilepes_mouse_entered"]
+[connection signal="pressed" from="kilepes" to="." method="_on_kilepes_pressed"]
