@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cv1c73evbwc47"]
+[gd_scene format=3 uid="uid://cv1c73evbwc47"]
 
 [ext_resource type="Texture2D" uid="uid://cvfo602r0vr2s" path="res://pictures/simahatter.png" id="1_1dlok"]
 [ext_resource type="Script" uid="uid://kcbm7kinpv1m" path="res://scenes/start.gd" id="2_kle00"]
@@ -28,7 +28,7 @@ animations = [{
 "duration": 5.0,
 "texture": ExtResource("4_tac0w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -36,7 +36,7 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_be50w"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -47,31 +47,31 @@ animations = [{
 "duration": 2.0,
 "texture": ExtResource("4_04fxg")
 }],
-"loop": true,
+"loop": 1,
 "name": &"kepvaltakozas",
 "speed": 5.0
 }]
 
-[node name="Menü" type="Node2D"]
+[node name="Menü" type="Node2D" unique_id=1210872932]
 
-[node name="Simahatter" type="Sprite2D" parent="."]
+[node name="Simahatter" type="Sprite2D" parent="." unique_id=53462292]
 position = Vector2(576.5, 324)
 scale = Vector2(0.450391, 0.45)
 texture = ExtResource("1_1dlok")
 
-[node name="háttérzene" type="AudioStreamPlayer2D" parent="."]
+[node name="háttérzene" type="AudioStreamPlayer2D" parent="." unique_id=114241953]
 stream = ExtResource("4_odhoa")
 bus = &"Music"
 parameters/looping = true
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=903987710]
 position = Vector2(646, 126)
 scale = Vector2(0.407021, 0.475934)
 sprite_frames = SubResource("SpriteFrames_lo5g0")
 frame_progress = 0.223067
 script = ExtResource("5_abmvi")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1086445639]
 position = Vector2(589.329, 323.698)
 scale = Vector2(0.461461, 0.446253)
 sprite_frames = SubResource("SpriteFrames_be50w")
@@ -79,7 +79,7 @@ animation = &"kepvaltakozas"
 frame_progress = 0.857654
 script = ExtResource("5_abmvi")
 
-[node name="Play" type="TextureButton" parent="."]
+[node name="Play" type="TextureButton" parent="." unique_id=726164855]
 offset_left = 38.0
 offset_top = 160.0
 offset_right = 1805.0
@@ -91,7 +91,7 @@ texture_hover = ExtResource("9_jhkx4")
 texture_focused = ExtResource("9_jhkx4")
 script = ExtResource("2_kle00")
 
-[node name="Beállítások" type="TextureButton" parent="."]
+[node name="Beállítások" type="TextureButton" parent="." unique_id=755070898]
 offset_left = 38.0
 offset_top = 261.0
 offset_right = 1805.0
@@ -103,7 +103,7 @@ texture_hover = ExtResource("12_rees5")
 texture_focused = ExtResource("12_rees5")
 script = ExtResource("2_kle00")
 
-[node name="Folytatás" type="TextureButton" parent="."]
+[node name="Folytatás" type="TextureButton" parent="." unique_id=1993677063]
 offset_left = 38.0
 offset_top = 62.0
 offset_right = 1805.0
@@ -115,7 +115,7 @@ texture_hover = ExtResource("14_r3i6l")
 texture_focused = ExtResource("14_r3i6l")
 script = ExtResource("2_kle00")
 
-[node name="Kilépés" type="TextureButton" parent="."]
+[node name="Kilépés" type="TextureButton" parent="." unique_id=882458429]
 offset_left = 38.0
 offset_top = 367.0
 offset_right = 1805.0
@@ -127,11 +127,11 @@ texture_hover = ExtResource("16_uy4xl")
 texture_focused = ExtResource("16_uy4xl")
 script = ExtResource("2_kle00")
 
-[node name="egerravitel" type="AudioStreamPlayer" parent="."]
+[node name="egerravitel" type="AudioStreamPlayer" parent="." unique_id=264814875]
 stream = ExtResource("6_0e3wx")
 bus = &"SFX"
 
-[node name="kattintas" type="AudioStreamPlayer" parent="."]
+[node name="kattintas" type="AudioStreamPlayer" parent="." unique_id=1208723319]
 stream = ExtResource("18_umns8")
 bus = &"SFX"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm7fwtfixehce"]
+[gd_scene format=3 uid="uid://dm7fwtfixehce"]
 
 [ext_resource type="Script" uid="uid://befc8otg7ud5t" path="res://scenes/player_controller.gd" id="1_i11my"]
 [ext_resource type="Texture2D" uid="uid://cg66uh1xuhbcs" path="res://pictures/karaktermozgas 1.png" id="2_mjjwi"]
@@ -26,7 +26,7 @@ animations = [{
 "duration": 0.91,
 "texture": ExtResource("6_3yj77")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -34,7 +34,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_0vmov")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -43,25 +43,24 @@ animations = [{
 radius = 6.32032
 height = 20.1466
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(1.25374, 1.9908)
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1886705875]
+position = Vector2(1, 1)
+scale = Vector2(0.81601787, 1.7191232)
 script = ExtResource("1_i11my")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-0.797614, -43.1987)
-rotation = -0.157759
-scale = Vector2(0.620044, -0.197388)
-zoom = Vector2(3.5, 3.5)
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1222607003]
+position = Vector2(-1.2254634, -37.22828)
+zoom = Vector2(5, 5)
 
-[node name="AgentAnimator" type="Node2D" parent="."]
+[node name="AgentAnimator" type="Node2D" parent="." unique_id=1707989809]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AgentAnimator"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AgentAnimator" unique_id=741968968]
 position = Vector2(-2.29275, -21.8666)
 scale = Vector2(0.0479207, 0.0273332)
 sprite_frames = SubResource("SpriteFrames_ewy4g")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.39284, -21.5994)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1142029537]
+position = Vector2(-2.4179637, -20.861155)
 scale = Vector2(2.49398, 2.11156)
 shape = SubResource("CapsuleShape2D_drpoi")
