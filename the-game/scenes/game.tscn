@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://hysewqvk2oxf"]
 
 [ext_resource type="Texture2D" uid="uid://c7h580n65uish" path="res://pictures/beallitasok1.png" id="1_nhhxa"]
+[ext_resource type="Script" uid="uid://dra1f2ocvcdxe" path="res://scenes/game.gd" id="1_p57ef"]
 [ext_resource type="Texture2D" uid="uid://5uojirdb64a1" path="res://pictures/szoba.jpg" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dm7fwtfixehce" path="res://scenes/character_body.tscn" id="2_mlb44"]
 [ext_resource type="PackedScene" uid="uid://ck5lhixlgks2s" path="res://scenes/pause.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://e6x2puj1bq41" path="res://scenes/fiók.gd" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpjg3"]
 texture = ExtResource("1_nhhxa")
@@ -59,7 +61,11 @@ texture = ExtResource("1_nhhxa")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kpjg3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bw7mj"]
+size = Vector2(20.472778, 69.56824)
+
 [node name="Game" type="Node2D" unique_id=906728235]
+script = ExtResource("1_p57ef")
 
 [node name="Szoba" type="Sprite2D" parent="." unique_id=1503558793]
 position = Vector2(180, 498)
@@ -85,3 +91,14 @@ offset_left = 57.0
 offset_top = 4.0
 offset_right = 57.0
 offset_bottom = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=612913885]
+
+[node name="Fiók" type="Area2D" parent="." unique_id=1945129172]
+position = Vector2(295, 535)
+script = ExtResource("5_iywne")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fiók" unique_id=1122870896]
+position = Vector2(0.38372803, 2.5)
+scale = Vector2(1.6232569, -0.12936963)
+shape = SubResource("RectangleShape2D_bw7mj")

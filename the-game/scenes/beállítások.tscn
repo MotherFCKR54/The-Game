@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdglacqwvw0ji"]
+[gd_scene format=3 uid="uid://cdglacqwvw0ji"]
 
 [ext_resource type="Texture2D" uid="uid://6bt2233hldeg" path="res://pictures/beallitasokhatter.png" id="1_357nx"]
 [ext_resource type="AudioStream" uid="uid://by2l0nx8uf6c3" path="res://zenék/loop.mp3" id="1_gj2jl"]
@@ -14,9 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://cehdiuepbyr28" path="res://pictures/stabcrop1.png" id="8_du4qq"]
 [ext_resource type="Texture2D" uid="uid://ctclmqw586gbj" path="res://pictures/stabcrop2.png" id="9_qm3ct"]
 
-[node name="Beállítások" type="Node2D"]
+[node name="Beállítások" type="Node2D" unique_id=1560564835]
 
-[node name="háttérzene" type="AudioStreamPlayer2D" parent="."]
+[node name="háttérzene" type="AudioStreamPlayer2D" parent="." unique_id=183055956]
 position = Vector2(576, 324)
 scale = Vector2(1.82567, 1.296)
 stream = ExtResource("1_gj2jl")
@@ -24,13 +24,13 @@ autoplay = true
 bus = &"Music"
 parameters/looping = true
 
-[node name="Beallitasokhatter" type="Sprite2D" parent="."]
+[node name="Beallitasokhatter" type="Sprite2D" parent="." unique_id=550825765]
 position = Vector2(0, 0.4)
 scale = Vector2(0.600284, 0.599971)
 texture = ExtResource("1_357nx")
 offset = Vector2(959.1, 539.352)
 
-[node name="Hangok" type="TextureButton" parent="."]
+[node name="Hangok" type="TextureButton" parent="." unique_id=1742226866]
 offset_left = 526.0
 offset_top = 228.0
 offset_right = 676.0
@@ -42,7 +42,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_sor5i")
 
-[node name="Nyelv" type="TextureButton" parent="."]
+[node name="Nyelv" type="TextureButton" parent="." unique_id=582382796]
 offset_left = 445.0
 offset_top = 301.0
 offset_right = 770.0
@@ -55,7 +55,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_sor5i")
 
-[node name="Stáblista" type="TextureButton" parent="."]
+[node name="Stáblista" type="TextureButton" parent="." unique_id=312185861]
 offset_left = 503.0
 offset_top = 379.0
 offset_right = 712.0
@@ -68,7 +68,7 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_sor5i")
 
-[node name="VIssza" type="TextureButton" parent="."]
+[node name="VIssza" type="TextureButton" parent="." unique_id=1307278123]
 offset_left = -36.0
 offset_top = -22.0
 offset_right = 1657.0
@@ -82,18 +82,18 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("5_sor5i")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1284647176]
 stream = ExtResource("6_caugx")
 bus = &"SFX"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1539207933]
 stream = ExtResource("7_2jqnw")
 bus = &"SFX"
 
-[connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_mouse_entered"]
 [connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_hangok_mouse_entered"]
-[connection signal="pressed" from="Hangok" to="Hangok" method="_on_pressed"]
+[connection signal="mouse_entered" from="Hangok" to="Hangok" method="_on_mouse_entered"]
 [connection signal="pressed" from="Hangok" to="Hangok" method="_on_hangok_pressed"]
+[connection signal="pressed" from="Hangok" to="Hangok" method="_on_pressed"]
 [connection signal="mouse_entered" from="Nyelv" to="Hangok" method="_on_nyelv_mouse_entered"]
 [connection signal="pressed" from="Nyelv" to="Hangok" method="_on_nyelv_pressed"]
 [connection signal="mouse_entered" from="Stáblista" to="Hangok" method="_on_stáblista_mouse_entered"]
