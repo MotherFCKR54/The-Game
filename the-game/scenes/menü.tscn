@@ -135,7 +135,6 @@ bus = &"SFX"
 stream = ExtResource("18_umns8")
 bus = &"SFX"
 
-[connection signal="ready" from="." to="Play" method="_on_menü_ready"]
 [connection signal="mouse_entered" from="Play" to="Play" method="_on_mouse_entered"]
 [connection signal="pressed" from="Play" to="Play" method="_on_pressed"]
 [connection signal="mouse_entered" from="Beállítások" to="Play" method="_on_beállítások_mouse_entered"]

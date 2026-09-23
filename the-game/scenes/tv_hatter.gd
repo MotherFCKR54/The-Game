@@ -1,6 +1,7 @@
+# A háttérvideót automatikusan elindítja, amikor a node készen áll.
 extends VideoStreamPlayer
 
 
-# Called when the node enters the scene tree for the first time.
+# Amikor a videó node készen áll, elindítja a lejátszást.
 func _ready() -> void:
 	play()

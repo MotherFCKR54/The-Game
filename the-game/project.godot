@@ -22,6 +22,10 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 buses/default_bus_layout="res://Bus/Idk.tres"
 
+[autoload]
+
+SaveManager="*res://scenes/save_manager.gd"
+
 [display]
 
 window/size/mode=2
