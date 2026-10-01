@@ -2,7 +2,7 @@
 
 A játék automatikusan ment a pályára belépéskor és minden tárgyváltozáskor.
 A főmenü Folytatás gombja visszatölti a legutóbb elért pályát és a tárgyakat.
-Mentés nélkül a Folytatás inaktív. Az új játék üres inventoryval indul;
+Mentés nélkül a Folytatás nem jelenik meg. Az új játék üres inventoryval indul;
 az előző mentést az új pályára belépés írja felül.
 A karakter pozíciója is mentésre kerül: két másodpercenként, tárgyváltozáskor, a pálya elhagyásakor és az ablak bezárásakor. Folytatáskor ugyanoda kerül vissza. A régi, pozíció nélküli mentéseknél a kezdőpontról indul.
 
@@ -22,8 +22,7 @@ if SaveManager.get_item_count("kulcs") > 0:
 ```
 
 A képernyő bal felső sarkában látható az egyszerű tárgylista.
-A projektben még nincsenek bekötött felvehető tárgyak. Ezek eseményéből kell
-meghívni a fenti függvényeket. Az inventory szótárat ne módosítsd közvetlenül.
+A fiókban található cetli már felvehető: kattintásra nagyítva megnyílik, az Elrakás gombbal az inventoryba kerül, ahol újra megnyitható. Az elrakott cetli a fiókból eltűnik, mentés után is. További tárgyak eseményeiből a fenti függvényeket hívd. Az inventory szótárat ne módosítsd közvetlenül.
 Az add_item/remove_item visszatérési értéke a mentés sikerét jelzi;
 írási hiba esetén a változás memóriában megmarad, és hibaüzenet jelenik meg.
 
