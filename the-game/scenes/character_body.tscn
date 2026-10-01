@@ -1,30 +1,26 @@
 [gd_scene format=3 uid="uid://dm7fwtfixehce"]
 
 [ext_resource type="Script" uid="uid://befc8otg7ud5t" path="res://scenes/player_controller.gd" id="1_i11my"]
-[ext_resource type="Texture2D" uid="uid://cg66uh1xuhbcs" path="res://pictures/karaktermozgas 1.png" id="2_mjjwi"]
-[ext_resource type="Texture2D" uid="uid://bsnu8i18u0dmm" path="res://pictures/karaktermozgas 2.png" id="3_1ayv3"]
-[ext_resource type="Texture2D" uid="uid://fg50tgsva8b2" path="res://pictures/karaktermozgas 3.png" id="4_50vcb"]
-[ext_resource type="Texture2D" uid="uid://o27u0twt3bcr" path="res://pictures/karaktermozgas 4.png" id="5_0lwv4"]
-[ext_resource type="Texture2D" uid="uid://by8dckwc1tn18" path="res://pictures/karaktermozgas 5.png" id="6_3yj77"]
-[ext_resource type="Texture2D" uid="uid://ewthytlmfphl" path="res://pictures/stand.png" id="7_0vmov"]
+[ext_resource type="Texture2D" uid="uid://d2t1fs7faspes" path="res://pictures/J-1.png" id="2_py4k7"]
+[ext_resource type="Texture2D" uid="uid://m4m3c63j6c3e" path="res://pictures/J-2.png" id="3_0vmov"]
+[ext_resource type="Texture2D" uid="uid://oyturwd3ylyd" path="res://pictures/J-3.png" id="4_ovmxs"]
+[ext_resource type="Texture2D" uid="uid://844n68ig4qom" path="res://pictures/J-4.png" id="5_68puh"]
+[ext_resource type="Texture2D" uid="uid://7yclku8svscd" path="res://pictures/karakterkozeprol.png" id="6_py4k7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ewy4g"]
 animations = [{
 "frames": [{
-"duration": 0.51,
-"texture": ExtResource("3_1ayv3")
+"duration": 0.7,
+"texture": ExtResource("2_py4k7")
 }, {
-"duration": 0.51,
-"texture": ExtResource("2_mjjwi")
+"duration": 0.7,
+"texture": ExtResource("3_0vmov")
 }, {
-"duration": 0.51,
-"texture": ExtResource("4_50vcb")
+"duration": 0.7,
+"texture": ExtResource("4_ovmxs")
 }, {
-"duration": 0.91,
-"texture": ExtResource("5_0lwv4")
-}, {
-"duration": 0.91,
-"texture": ExtResource("6_3yj77")
+"duration": 0.5,
+"texture": ExtResource("5_68puh")
 }],
 "loop": 1,
 "name": &"default",
@@ -32,7 +28,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_0vmov")
+"texture": ExtResource("6_py4k7")
 }],
 "loop": 1,
 "name": &"idle",
@@ -59,6 +55,7 @@ position = Vector2(-2.29275, -21.8666)
 scale = Vector2(0.0479207, 0.0273332)
 sprite_frames = SubResource("SpriteFrames_ewy4g")
 animation = &"idle"
+frame_progress = 0.84595793
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1142029537]
 position = Vector2(-2.4179637, -20.861155)
