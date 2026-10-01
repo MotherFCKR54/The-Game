@@ -1,14 +1,43 @@
 [gd_scene format=3 uid="uid://dm7fwtfixehce"]
 
 [ext_resource type="Script" uid="uid://befc8otg7ud5t" path="res://scenes/player_controller.gd" id="1_i11my"]
+[ext_resource type="Texture2D" uid="uid://emwygvx68asf" path="res://pictures/b-1.png" id="2_5j4ji"]
 [ext_resource type="Texture2D" uid="uid://d2t1fs7faspes" path="res://pictures/J-1.png" id="2_py4k7"]
 [ext_resource type="Texture2D" uid="uid://m4m3c63j6c3e" path="res://pictures/J-2.png" id="3_0vmov"]
+[ext_resource type="Texture2D" uid="uid://dnr1jygfnt7t2" path="res://pictures/b-2.png" id="3_pa7a5"]
 [ext_resource type="Texture2D" uid="uid://oyturwd3ylyd" path="res://pictures/J-3.png" id="4_ovmxs"]
+[ext_resource type="Texture2D" uid="uid://d1ykdlg3xemcr" path="res://pictures/B-3.png" id="4_r12nw"]
 [ext_resource type="Texture2D" uid="uid://844n68ig4qom" path="res://pictures/J-4.png" id="5_68puh"]
+[ext_resource type="Texture2D" uid="uid://5d04fo2j2b81" path="res://pictures/B-4.png" id="5_pxgn8"]
 [ext_resource type="Texture2D" uid="uid://7yclku8svscd" path="res://pictures/karakterkozeprol.png" id="6_py4k7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ewy4g"]
 animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": ExtResource("2_5j4ji")
+}, {
+"duration": 0.7,
+"texture": ExtResource("3_pa7a5")
+}, {
+"duration": 0.7,
+"texture": ExtResource("4_r12nw")
+}, {
+"duration": 0.7,
+"texture": ExtResource("5_pxgn8")
+}],
+"loop": 1,
+"name": &"balra",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_py4k7")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 0.7,
 "texture": ExtResource("2_py4k7")
@@ -23,15 +52,7 @@ animations = [{
 "texture": ExtResource("5_68puh")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_py4k7")
-}],
-"loop": 1,
-"name": &"idle",
+"name": &"jobra",
 "speed": 5.0
 }]
 
@@ -54,8 +75,7 @@ zoom = Vector2(5, 5)
 position = Vector2(-2.29275, -21.8666)
 scale = Vector2(0.0479207, 0.0273332)
 sprite_frames = SubResource("SpriteFrames_ewy4g")
-animation = &"idle"
-frame_progress = 0.84595793
+animation = &"balra"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1142029537]
 position = Vector2(-2.4179637, -20.861155)

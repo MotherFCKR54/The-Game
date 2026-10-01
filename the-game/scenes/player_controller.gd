@@ -20,9 +20,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("Move_left", "Move_right")
 	if direction:
 		velocity.x = direction * SPEED
-		animated_sprite.play("default")
-		# Balra haladáskor vízszintesen tükrözi a karakter képét.
-		animated_sprite.flip_h = direction < 0
+		# Mindkét iránynak saját animációja van, ezért kikapcsoljuk a tükrözést.
+		animated_sprite.flip_h = false
+		# Jobbra a jobra, balra a balra animációt játssza le.
+		if direction > 0:
+			animated_sprite.play("jobra")
+		else:
+			animated_sprite.play("balra")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animated_sprite.stop()

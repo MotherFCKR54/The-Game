@@ -1,6 +1,34 @@
 # Az Esc szünetmenüjét, a játék szüneteltetését és a szünetmenü gombjait kezeli.
 extends Control
 
+# A rámutatás az eredeti mérethez képest tíz százalékkal nagyítja a gombokat.
+const HOVER_SCALE := 1.1
+var _button_scales: Dictionary = {}
+
+# Középre helyezi a nagyítás tengelyét, az eddigi képernyőpozíció megtartásával.
+func _ready() -> void:
+	for button: TextureButton in [$beallitas, $folytatas, $iranyitas, $kilepes]:
+		# A piros kiemelt képek szélesebbek a normál képeknél.
+		# Mindegyiket középre rajzoljuk, így képcserekor sem tolódik el a felirat.
+		button.stretch_mode = TextureButton.STRETCH_KEEP_CENTERED
+		_button_scales[button] = button.scale
+		var old_origin := button.get_transform().origin
+		button.pivot_offset = button.size / 2.0
+		# A gombok már eleve kicsinyítettek: a pivot változásának eltolását korrigáljuk.
+		button.position += old_origin - button.get_transform().origin
+		button.mouse_entered.connect(_set_button_hover.bind(button, true))
+		button.mouse_exited.connect(_set_button_hover.bind(button, false))
+	visibility_changed.connect(_reset_button_scales)
+
+# Mindig az eredeti méretből számol, így ismételt rámutatáskor sem nő tovább.
+func _set_button_hover(button: TextureButton, hovered: bool) -> void:
+	button.scale = _button_scales[button] * (HOVER_SCALE if hovered else 1.0)
+
+# Bezáráskor és újranyitáskor törli a korábbi kiemelést.
+func _reset_button_scales() -> void:
+	for button: TextureButton in _button_scales:
+		button.scale = _button_scales[button]
+
 # A setter minden értékadáskor a SceneTree szünetét és a menü láthatóságát is frissíti.
 var is_paused = false : 
 	set(value):
