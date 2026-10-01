@@ -1,7 +1,7 @@
 # A cetli közös, nagyított olvasónézete a fiókból és az inventoryból is.
 extends CanvasLayer
 
-const ITEM_ID := "cetli"
+var item_id: String = "cetli"
 var _was_paused := false
 var _closing := false
 var _sheet: TextureRect
@@ -44,7 +44,7 @@ func _ready() -> void:
 	add_child(backdrop)
 	_sheet = TextureRect.new()
 	_sheet.name = "Cetli1"
-	_sheet.texture = preload("res://pictures/cetli1.png")
+	_sheet.texture = load("res://pictures/cetli2.png" if item_id == "cetli2" else "res://pictures/cetli1.png")
 	_sheet.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_sheet.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	_sheet.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -89,8 +89,8 @@ func _layout() -> void:
 func _store_note() -> void:
 	if _closing:
 		return
-	if SaveManager.get_item_count(ITEM_ID) == 0:
-		SaveManager.add_item(ITEM_ID)
+	if SaveManager.get_item_count(item_id) == 0:
+		SaveManager.add_item(item_id)
 	close()
 
 # Esc bezárja az olvasót; a pause menü nem kapja meg ugyanazt a gombnyomást.

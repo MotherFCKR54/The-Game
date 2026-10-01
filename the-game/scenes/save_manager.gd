@@ -2,6 +2,8 @@
 extends Node
 # Erre a jelzésre frissül a képernyőn látható tárgylista.
 signal inventory_changed
+# Csak tényleges tárgyfelvételkor küld jelzést; betöltéskor nem.
+signal item_added(item_id: String, amount: int)
 # Mentési hibáról értesíti az esetleges további figyelőket.
 signal save_failed(message: String)
 
@@ -162,6 +164,7 @@ func add_item(item_id: String, amount: int = 1) -> bool:
 		return false
 	inventory[item_id] = get_item_count(item_id) + amount
 	inventory_changed.emit()
+	item_added.emit(item_id, amount)
 	return save_game()
 
 # Ha van elég tárgy, levonja a darabszámot; nullánál törli a bejegyzést, frissít és ment.
