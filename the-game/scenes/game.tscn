@@ -2,10 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://c7h580n65uish" path="res://pictures/beallitasok1.png" id="1_nhhxa"]
 [ext_resource type="Script" uid="uid://dra1f2ocvcdxe" path="res://scenes/game.gd" id="1_p57ef"]
-[ext_resource type="Texture2D" uid="uid://5uojirdb64a1" path="res://pictures/szoba.jpg" id="2_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dm7fwtfixehce" path="res://scenes/character_body.tscn" id="2_mlb44"]
+[ext_resource type="Texture2D" uid="uid://2vtf0ait4p1w" path="res://pictures/szoba.png" id="2_p57ef"]
 [ext_resource type="PackedScene" uid="uid://ck5lhixlgks2s" path="res://scenes/pause.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://e6x2puj1bq41" path="res://scenes/fiók.gd" id="5_iywne"]
+[ext_resource type="SpriteFrames" uid="uid://dpjnigymwikvc" path="res://scenes/uv_lamp_frames.tres" id="20_uv_frames"]
+[ext_resource type="Script" uid="uid://46jti8d3m7fd" path="res://scenes/uv_frame_blend.gd" id="21_uv_blend"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kpjg3"]
 texture = ExtResource("1_nhhxa")
@@ -70,7 +72,13 @@ script = ExtResource("1_p57ef")
 [node name="Szoba" type="Sprite2D" parent="." unique_id=1503558793]
 position = Vector2(180, 498)
 scale = Vector2(0.1396485, 0.12222217)
-texture = ExtResource("2_lbhrr")
+texture = ExtResource("2_p57ef")
+
+[node name="UVLampa" type="AnimatedSprite2D" parent="Szoba" unique_id=1627208494]
+visible = false
+sprite_frames = ExtResource("20_uv_frames")
+animation = &"uv_villodas"
+script = ExtResource("21_uv_blend")
 
 [node name="CharacterBody2D" parent="." unique_id=1377121509 instance=ExtResource("2_mlb44")]
 position = Vector2(173.00002, 581)

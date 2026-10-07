@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5uojirdb64a1"
-path="res://.godot/imported/szoba.jpg-9ca3607b156bd8bd799ad932b12a7226.ctex"
+uid="uid://gdxs4l1tno65"
+path="res://.godot/imported/szoba-withuvlampa1.png-8b88bb0aeb763be68ae0146e74e210e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pictures/szoba.jpg"
-dest_files=["res://.godot/imported/szoba.jpg-9ca3607b156bd8bd799ad932b12a7226.ctex"]
+source_file="res://newpictures/szoba-withuvlampa1.png"
+dest_files=["res://.godot/imported/szoba-withuvlampa1.png-8b88bb0aeb763be68ae0146e74e210e9.ctex"]
 
 [params]
 

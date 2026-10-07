@@ -13,6 +13,9 @@ const SAVE_PATH := "user://progress.json"
 var current_level: String = ""
 # Tárgyazonosító -> darabszám szótár. Módosításhoz az add_item/remove_item függvényeket használd.
 var inventory: Dictionary = {}
+# A szobában elvégzett kapcsolások állapota; régi mentésnél mindkettő hamis.
+var lamp_connected := false
+var power_strip_on := false
 # Az aktuális karakter referenciája; a mentés innen olvassa a globális pozíciót.
 var _player: Node2D
 # A betöltött helyet a pálya létrejöttéig tárolja. A null azt jelenti, nincs alkalmazandó pozíció.
@@ -50,6 +53,9 @@ func _read_save() -> Dictionary:
 	if data.get("version") != 1 or not data.get("level") is String or not data.get("inventory") is Dictionary:
 		return {}
 	var level: String = data["level"]
+	for key in ["lamp_connected", "power_strip_on"]:
+		if data.has(key) and not data[key] is bool:
+			return {}
 	# A pozíció opcionális, így a korábbi, pozíció nélküli mentések is használhatók.
 	if data.has("position"):
 		var position_data: Variant = data["position"]
@@ -84,6 +90,8 @@ func new_game() -> void:
 	_player = null
 	_pending_position = null
 	inventory.clear()
+	lamp_connected = false
+	power_strip_on = false
 	inventory_changed.emit()
 
 # Regisztrálja a pályát és a karaktert, alkalmazza a betöltésre váró pozíciót, majd ment.
@@ -109,6 +117,8 @@ func save_game() -> bool:
 		_report("Nem sikerült megnyitni a mentési fájlt.")
 		return false
 	var data := {"version": 1, "level": current_level, "inventory": inventory}
+	data["lamp_connected"] = lamp_connected
+	data["power_strip_on"] = power_strip_on
 	if is_instance_valid(_player):
 		# A Vector2 koordinátáit két számként tárolja, mert ez közvetlenül JSON-ba írható.
 		data["position"] = [_player.global_position.x, _player.global_position.y]
@@ -135,6 +145,10 @@ func continue_game() -> bool:
 	# Sikertelen pályaváltás esetére megőrzi a betöltés előtti állapotot.
 	var previous_level := current_level
 	var previous_inventory := inventory.duplicate()
+	var previous_lamp := lamp_connected
+	var previous_power := power_strip_on
+	lamp_connected = data.get("lamp_connected", false)
+	power_strip_on = data.get("power_strip_on", false)
 	var previous_pending: Variant = _pending_position
 	var previous_player := _player
 	_player = null
@@ -150,6 +164,8 @@ func continue_game() -> bool:
 	if result != OK:
 		current_level = previous_level
 		inventory = previous_inventory
+		lamp_connected = previous_lamp
+		power_strip_on = previous_power
 		_player = previous_player
 		_pending_position = previous_pending
 		_report("A mentett pályát nem sikerült betölteni.")

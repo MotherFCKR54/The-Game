@@ -1,0 +1,28 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dpjnigymwikvc"]
+
+[ext_resource type="Texture2D" uid="uid://gdxs4l1tno65" path="res://newpictures/szoba-withuvlampa1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://g5jisqkmg7uc" path="res://newpictures/szoba-withuvlampa2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://fx2gon5vagi3" path="res://newpictures/szoba-withuvlampa3.png" id="3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 0.61,
+"texture": ExtResource("1")
+}, {
+"duration": 0.61,
+"texture": ExtResource("2")
+}, {
+"duration": 0.61,
+"texture": ExtResource("3")
+}, {
+"duration": 0.61,
+"texture": ExtResource("2")
+}, {
+"duration": 0.61,
+"texture": ExtResource("3")
+}],
+"loop": 1,
+"name": &"uv_villodas",
+"speed": 1.0
+}]
