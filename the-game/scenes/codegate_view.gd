@@ -14,6 +14,8 @@ var _feedback_timer: Timer
 var _buttons: Array[Button] = []
 # A kód eredményének hangja az effektek hangerőbeállítását követi.
 var _result_audio: AudioStreamPlayer
+# Külön lejátszó a számgomboknak, hogy ne szakítsák meg az eredmény hangját.
+var _key_audio: AudioStreamPlayer
 
 # A grafika saját számbillentyűi fölé átlátszó, kattintható gombokat helyez.
 func _ready() -> void:
@@ -22,6 +24,9 @@ func _ready() -> void:
 	_result_audio = AudioStreamPlayer.new()
 	_result_audio.bus = &"SFX"
 	add_child(_result_audio)
+	_key_audio = AudioStreamPlayer.new()
+	_key_audio.bus = &"SFX"
+	add_child(_key_audio)
 	add_to_group("codegate_view")
 	_was_paused = get_tree().paused
 	get_tree().paused = true
@@ -110,7 +115,11 @@ func _press_key(value: String) -> void:
 	if _busy or _closing:
 		return
 	match value:
-		"clear": entered_code = ""
+		"clear":
+			entered_code = ""
+			# Az X gomb törléskor a saját hangját játssza le, üres kijelzőnél is.
+			_key_audio.stream = preload("res://zenék/x.mp3")
+			_key_audio.play()
 		"backspace": entered_code = entered_code.left(maxi(0, entered_code.length() - 1))
 		"submit":
 			_submit()
@@ -118,7 +127,21 @@ func _press_key(value: String) -> void:
 		_:
 			if value.length() == 1 and value in "0123456789" and entered_code.length() < MAX_DIGITS:
 				entered_code += value
+				_play_digit_sound(value)
 	_display.text = entered_code
+
+# A fájlnév szerinti számcsoportok hangjai; a 8-as a 4–7–0 csoporthoz tartozik.
+func _play_digit_sound(digit: String) -> void:
+	match digit:
+		"1", "5", "9":
+			_key_audio.stream = preload("res://zenék/1-5-9.mp3")
+		"2", "3", "6":
+			_key_audio.stream = preload("res://zenék/2-3-6.mp3")
+		"4", "7", "8", "0":
+			_key_audio.stream = preload("res://zenék/4-7-0.mp3")
+		_:
+			return
+	_key_audio.play()
 
 # Üresen hagyott helyes kód mellett nincs elfogadott kombináció; nem használunk ideiglenes titkos kódot.
 func _submit() -> void:
@@ -169,3 +192,4 @@ func close() -> void:
 	_closing = true
 	get_tree().paused = _was_paused
 	queue_free()
+
