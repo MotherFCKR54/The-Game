@@ -16,6 +16,8 @@ var inventory: Dictionary = {}
 # A szobában elvégzett kapcsolások állapota; régi mentésnél mindkettő hamis.
 var lamp_connected := false
 var power_strip_on := false
+# A tükör megtekintése után az ajtó kódpanelje elérhető marad.
+var mirror_seen := false
 # Az aktuális karakter referenciája; a mentés innen olvassa a globális pozíciót.
 var _player: Node2D
 # A betöltött helyet a pálya létrejöttéig tárolja. A null azt jelenti, nincs alkalmazandó pozíció.
@@ -53,7 +55,7 @@ func _read_save() -> Dictionary:
 	if data.get("version") != 1 or not data.get("level") is String or not data.get("inventory") is Dictionary:
 		return {}
 	var level: String = data["level"]
-	for key in ["lamp_connected", "power_strip_on"]:
+	for key in ["lamp_connected", "power_strip_on", "mirror_seen"]:
 		if data.has(key) and not data[key] is bool:
 			return {}
 	# A pozíció opcionális, így a korábbi, pozíció nélküli mentések is használhatók.
@@ -92,6 +94,7 @@ func new_game() -> void:
 	inventory.clear()
 	lamp_connected = false
 	power_strip_on = false
+	mirror_seen = false
 	inventory_changed.emit()
 
 # Regisztrálja a pályát és a karaktert, alkalmazza a betöltésre váró pozíciót, majd ment.
@@ -119,6 +122,7 @@ func save_game() -> bool:
 	var data := {"version": 1, "level": current_level, "inventory": inventory}
 	data["lamp_connected"] = lamp_connected
 	data["power_strip_on"] = power_strip_on
+	data["mirror_seen"] = mirror_seen
 	if is_instance_valid(_player):
 		# A Vector2 koordinátáit két számként tárolja, mert ez közvetlenül JSON-ba írható.
 		data["position"] = [_player.global_position.x, _player.global_position.y]
@@ -147,6 +151,8 @@ func continue_game() -> bool:
 	var previous_inventory := inventory.duplicate()
 	var previous_lamp := lamp_connected
 	var previous_power := power_strip_on
+	var previous_mirror := mirror_seen
+	mirror_seen = data.get("mirror_seen", false)
 	lamp_connected = data.get("lamp_connected", false)
 	power_strip_on = data.get("power_strip_on", false)
 	var previous_pending: Variant = _pending_position
@@ -166,6 +172,7 @@ func continue_game() -> bool:
 		inventory = previous_inventory
 		lamp_connected = previous_lamp
 		power_strip_on = previous_power
+		mirror_seen = previous_mirror
 		_player = previous_player
 		_pending_position = previous_pending
 		_report("A mentett pályát nem sikerült betölteni.")

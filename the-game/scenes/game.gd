@@ -1,6 +1,9 @@
 # A játékpálya vezérlője: inventory-kijelzés, automatikus mentés és fióknyitás.
 extends Node2D
 
+# Az ajtó helyes kódja; a Game node Inspectorában később is módosítható.
+@export var door_pin_code: String = "55"
+
 # A dugvilla állapota és a pálya eredeti háttérképe.
 var _lamp_connected := false
 var _original_room_texture: Texture2D
@@ -19,6 +22,8 @@ func _ready() -> void:
 	_setup_muzikri_box()
 	_setup_plug()
 	_setup_power_switch()
+	_setup_mirror()
+	_setup_door()
 	# A mentett állapotot a háttérre, a dugvilla helyére és a jelzőfényre is alkalmazza.
 	_lamp_connected = SaveManager.lamp_connected
 	_power_strip_on = SaveManager.power_strip_on
@@ -133,3 +138,51 @@ func _on_power_switch_input(_viewport: Viewport, event: InputEvent, _shape_idx: 
 		SaveManager.power_strip_on = _power_strip_on
 		SaveManager.save_game()
 		get_viewport().set_input_as_handled()
+
+# A háttér tükörfelületét kattinthatóvá teszi, követve a szoba elhelyezését.
+func _setup_mirror() -> void:
+	var area := Area2D.new()
+	area.name = "Tukor"
+	var image_size: Vector2 = $Szoba.texture.get_size()
+	area.position = image_size * (Vector2(0.317, 0.64) - Vector2(0.5, 0.5))
+	var collision := CollisionShape2D.new()
+	var shape := RectangleShape2D.new()
+	shape.size = image_size * Vector2(0.05, 0.24)
+	collision.shape = shape
+	area.add_child(collision)
+	area.input_event.connect(_on_mirror_input)
+	$Szoba.add_child(area)
+
+# Csak bekötött és bekapcsolt UV-lámpánál nyitja meg a tükröt, egyszerre egy példányban.
+func _on_mirror_input(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if not (_lamp_connected and _power_strip_on) or get_tree().paused:
+		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if get_tree().get_nodes_in_group("mirror_view").is_empty():
+			get_viewport().set_input_as_handled()
+			add_child(preload("res://scenes/mirror_view.gd").new())
+
+# Az ajtó felületén egyszeri kattintás nyitja meg a pinpadet.
+func _setup_door() -> void:
+	var area := Area2D.new()
+	area.name = "AjtoKodpanel"
+	var image_size: Vector2 = $Szoba.texture.get_size()
+	area.position = image_size * (Vector2(0.222, 0.67) - Vector2(0.5, 0.5))
+	var collision := CollisionShape2D.new()
+	var shape := RectangleShape2D.new()
+	shape.size = image_size * Vector2(0.10, 0.37)
+	collision.shape = shape
+	area.add_child(collision)
+	area.input_event.connect(_on_door_input)
+	$Szoba.add_child(area)
+
+# A tükör megtekintése előfeltétel, de az UV-lámpának ezután már nem kell bekapcsolva lennie.
+func _on_door_input(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if not SaveManager.mirror_seen or get_tree().paused:
+		return
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if get_tree().get_nodes_in_group("codegate_view").is_empty():
+			get_viewport().set_input_as_handled()
+			var panel := preload("res://scenes/codegate_view.gd").new()
+			panel.correct_code = door_pin_code
+			add_child(panel)
