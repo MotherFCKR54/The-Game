@@ -12,11 +12,16 @@ var _display: Label
 var _indicator: TextureRect
 var _feedback_timer: Timer
 var _buttons: Array[Button] = []
+# A kód eredményének hangja az effektek hangerőbeállítását követi.
+var _result_audio: AudioStreamPlayer
 
 # A grafika saját számbillentyűi fölé átlátszó, kattintható gombokat helyez.
 func _ready() -> void:
 	layer = 40
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	_result_audio = AudioStreamPlayer.new()
+	_result_audio.bus = &"SFX"
+	add_child(_result_audio)
 	add_to_group("codegate_view")
 	_was_paused = get_tree().paused
 	get_tree().paused = true
@@ -123,6 +128,9 @@ func _submit() -> void:
 		button.disabled = true
 	_indicator.texture = preload("res://newpictures/codegateright2.png") if valid else preload("res://newpictures/codegatewrong2.png")
 	_indicator.show()
+	# A panel szünet közben is aktív, ezért a visszajelző hang is megszólal.
+	_result_audio.stream = preload("res://zenék/rightnumber.mp3") if valid else preload("res://zenék/wrongnumber.mp3")
+	_result_audio.play()
 	_feedback_timer.start()
 	if valid:
 		code_accepted.emit()

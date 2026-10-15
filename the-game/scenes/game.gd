@@ -176,9 +176,9 @@ func _setup_door() -> void:
 	area.input_event.connect(_on_door_input)
 	$Szoba.add_child(area)
 
-# A tükör megtekintése előfeltétel, de az UV-lámpának ezután már nem kell bekapcsolva lennie.
+# A pinpadhez a tükör megtekintése és a működő UV-lámpa egyaránt szükséges.
 func _on_door_input(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if not SaveManager.mirror_seen or get_tree().paused:
+	if not SaveManager.mirror_seen or not (_lamp_connected and _power_strip_on) or get_tree().paused:
 		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if get_tree().get_nodes_in_group("codegate_view").is_empty():
